@@ -1,0 +1,6 @@
+lxml
+beautifulsoup4
+cryptography
+requests
+dnspython
+pyjwt
