@@ -1,0 +1,26 @@
+# This is a CODEOWNERS file.
+# Lines starting with '#' are comments.
+# Each line has a file pattern followed by one or more owners.
+
+# By default, the repository owner (@naishal10) is the owner of all files.
+# This is a good fallback rule.
+* @naishal10
+
+# The main application logic is owned by the core development team or lead developer.
+# You can use GitHub usernames or team names (e.g., @organization/team-name).
+/app.py @naishal10 @core-developer
+
+# Configuration files and setup scripts are owned by the DevOps or infrastructure team.
+/setup.sh @devops-lead
+/config.ini.template @devops-lead
+/.gitignore @naishal10
+
+# Documentation files are owned by the technical writer or documentation team.
+# This includes all markdown files.
+*.md @docs-specialist
+/licence.txt @naishal10
+
+# Python dependency files are owned by the lead developer or security team
+# to ensure dependencies are vetted.
+/requirements.txt @naishal10 @security-team
+/requirements-dev.txt @core-developer
