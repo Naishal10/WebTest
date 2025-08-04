@@ -1,0 +1,136 @@
+# Security Testing Tool Configuration Template
+# Copy this file to config.ini and customize as needed
+# WARNING: Never commit config.ini to version control!
+
+[general]
+# Default timeout for HTTP requests (seconds)
+timeout = 10
+
+# Number of concurrent threads for scanning
+threads = 10
+
+# Rate limiting delay between requests (seconds)
+rate_limit_delay = 0.5
+
+# User agent string
+user_agent = Mozilla/5.0 (Security-Test-Tool/2.0; +https://github.com/security)
+
+[scanning]
+# Enable aggressive mode by default (true/false)
+aggressive_default = false
+
+# Enable verbose output by default (true/false)
+verbose_default = false
+
+# Maximum depth for recursive scanning
+max_depth = 3
+
+# Follow redirects during scanning (true/false)
+follow_redirects = false
+
+# Maximum number of redirects to follow
+max_redirects = 5
+
+[reporting]
+# Default output directory for reports
+report_dir = reports
+
+# Default output directory for scan results
+results_dir = results
+
+# Default output directory for logs
+logs_dir = logs
+
+# Include timestamps in filenames (true/false)
+timestamp_filenames = true
+
+# Report formats to generate (comma-separated: html,json,xml)
+report_formats = html,json
+
+[security]
+# Verify SSL certificates (true/false)
+# WARNING: Only set to false for testing purposes!
+verify_ssl = true
+
+# Custom CA bundle path (leave empty for system default)
+ca_bundle_path = 
+
+# Connection timeout for SSL/TLS tests (seconds)
+ssl_timeout = 10
+
+[paths]
+# Additional paths to check (comma-separated)
+# These will be added to the default path list
+custom_paths = 
+
+# Wordlist file for directory brute-forcing (optional)
+wordlist_file = 
+
+# Custom payloads file (optional)
+payloads_file = 
+
+[exclusions]
+# URL patterns to exclude from scanning (regex, one per line)
+exclude_patterns = 
+    .*\.pdf$
+    .*\.jpg$
+    .*\.png$
+    .*\.gif$
+    .*\.css$
+    .*\.js$
+
+# Parameters to exclude from testing (comma-separated)
+exclude_params = __VIEWSTATE,__EVENTVALIDATION
+
+[notifications]
+# Send notifications on critical findings (true/false)
+notify_critical = false
+
+# Webhook URL for notifications (optional)
+webhook_url = 
+
+# Email settings for notifications (optional)
+smtp_server = 
+smtp_port = 587
+smtp_username = 
+smtp_password = 
+email_from = 
+email_to = 
+
+[advanced]
+# Enable experimental features (true/false)
+experimental_features = false
+
+# Custom headers to include in all requests (JSON format)
+custom_headers = {}
+
+# Proxy settings (optional)
+# Format: http://user:pass@host:port
+http_proxy = 
+https_proxy = 
+
+# Maximum response size to process (bytes)
+max_response_size = 10485760
+
+# Enable response caching (true/false)
+enable_cache = true
+
+# Cache expiration time (seconds)
+cache_ttl = 300
+
+[logging]
+# Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+log_level = INFO
+
+# Log format
+log_format = %(asctime)s - %(name)s - %(levelname)s - %(message)s
+
+# Maximum log file size (MB)
+max_log_size = 50
+
+# Number of log files to keep
+log_backup_count = 5
+
+# Log HTTP requests/responses (true/false)
+# WARNING: This may log sensitive data!
+log_http_traffic = false
